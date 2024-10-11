@@ -99,5 +99,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ## Acknowledgments
 
-- [Baseball Data Provider](https://api.example.com) - For providing team data.
+- [Tank01 MLB Live In-Game]([https://api.example.com](https://rapidapi.com/tank01/api/tank01-mlb-live-in-game-real-time-statistics/playground/apiendpoint_ace7dee9-2aab-4836-be4b-95e483cdb8e5)) - For providing team data.
 - Python Community - For helpful resources and documentation.
