@@ -44,10 +44,10 @@ def update_database_full(db_config, updated_schedule):
 
 def main():
     db_config = {
-        'host': 'btbm-db.c57m1yfxa4e2.us-east-2.rds.amazonaws.com',
-        'user': 'admin',
-        'passwd': 'pyvtYr-nyrtoh-mupde6',
-        'database': 'my_database_name'
+        'host': '',
+        'user': '',
+        'passwd': '',
+        'database': ''
     }
     updated_schedule = fetch_updated_schedule()
     if updated_schedule['statusCode'] == 200:
