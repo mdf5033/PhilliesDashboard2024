@@ -43,7 +43,7 @@ def fetch_updated_schedule():
 def fetch_phillies_player_ids():
     url = 'https://tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com/getMLBPlayerList'
     headers = {
-        'X-RapidAPI-Key': '9313a2b0f9msh85263ad455d627fp1a17b8jsn483e8f9cb267',
+        'X-RapidAPI-Key': '',
         'X-RapidAPI-Host': 'tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com'
     }
 
@@ -74,7 +74,7 @@ def fetch_phillies_player_ids():
 def get_player_news(player_ids):
     conn = http.client.HTTPSConnection("tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com")
     headers = {
-        'X-RapidAPI-Key': "9313a2b0f9msh85263ad455d627fp1a17b8jsn483e8f9cb267",
+        'X-RapidAPI-Key': "",
         'X-RapidAPI-Host': "tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com"
     }
 
