@@ -13,7 +13,7 @@ The **Phillies Dashboard** is a Python-based project designed to analyze the Phi
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/PhilliesDashboard.git
+   git clone https://github.com/mdf5033/PhilliesDashboard.git
    ```
 
 2. **Install Required Dependencies**:
