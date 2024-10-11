@@ -6,7 +6,7 @@ def fetch_updated_schedule():
     url = "https://tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com/getMLBTeamSchedule"
     querystring = {"teamAbv": "PHI", "season": "2024"}
     headers = {
-        "X-RapidAPI-Key": "9313a2b0f9msh85263ad455d627fp1a17b8jsn483e8f9cb267",
+        "X-RapidAPI-Key": "",
         "X-RapidAPI-Host": "tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com"
     }
     response = requests.get(url, headers=headers, params=querystring)
