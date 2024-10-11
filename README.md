@@ -7,7 +7,6 @@ The **Phillies Dashboard** is a Python-based project designed to analyze the Phi
 - **Season Record Analysis**: Provides an overview of the Phillies' current win-loss record and other key season statistics.
 - **Upcoming Games**: Displays the schedule for the Phillies' next games, including opponents, dates, and venues.
 - **Streaks and Trends**: Analyzes recent performance, including winning and losing streaks.
-- **Team Performance Metrics**: Tracks various metrics over the season to highlight the team's progress.
 
 ## Installation
 
