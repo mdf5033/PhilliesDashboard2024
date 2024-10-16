@@ -8,6 +8,39 @@ The **Phillies Dashboard** is a Python-based project designed to analyze the Phi
 - **Upcoming Games**: Displays the schedule for the Phillies' next games, including opponents, dates, and venues.
 - **Streaks and Trends**: Analyzes recent performance, including winning and losing streaks.
 
+## AWS Infrastructure Prerequisites
+
+	1.	AWS Account:
+	•	Ensure you have an active AWS account. You can sign up at AWS.
+	2.	AWS Services:
+	•	Amazon S3:
+	•	Used for storing game data or configuration files, if applicable.
+	•	Create an S3 bucket and configure appropriate read/write permissions.
+	•	Amazon RDS:
+	•	If the project uses a database for storing game records, player stats, or schedules, ensure you have an RDS instance set up (e.g., MySQL, PostgreSQL).
+	•	Configure database access by updating the connection parameters in your code.
+	•	AWS Lambda:
+	•	Used for running serverless functions to fetch and process data.
+	•	Ensure the necessary Lambda functions are deployed and configured with access to relevant AWS resources.
+	•	Amazon CloudWatch:
+	•	For logging and monitoring the functions and services used in the dashboard.
+	3.	AWS CLI:
+	•	Install and configure the AWS CLI to manage and interact with your AWS services. Follow the instructions to install from AWS CLI Installation Guide.
+	•	Use the following command to configure your AWS CLI:
+
+aws configure
+
+
+	•	Enter your AWS Access Key, Secret Key, region, and output format.
+
+	4.	IAM Roles and Permissions:
+	•	Ensure your AWS account or IAM user has the necessary permissions to interact with the required AWS services.
+	•	Create and assign IAM roles to grant Lambda functions or EC2 instances the required permissions.
+	5.	Environment Variables:
+	•	Define environment variables for your AWS access keys, database connection strings, and other credentials in the appropriate .env file or in your deployment scripts.
+	•	Ensure sensitive information is managed securely and not hard-coded in the source files.
+
+
 ## Installation
 
 1. **Clone the Repository**:
