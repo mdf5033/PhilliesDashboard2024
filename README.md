@@ -1,5 +1,3 @@
-Certainly! Here is the complete README in markdown format:
-
 # Phillies Dashboard
 
 **Phillies Dashboard** is a Python-based application designed to analyze the Philadelphia Phillies' current record and upcoming games. It fetches data from various sources and provides insights on game schedules, team performance, and more.
@@ -91,9 +89,3 @@ Environment Variables
 Contributing
 
 Contributions are welcome! Please fork this repository, make your changes, and submit a pull request.
-
-License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-This markdown format is structured to be user-friendly and provides clear guidance on the project's setup, AWS requirements, and general usage.
