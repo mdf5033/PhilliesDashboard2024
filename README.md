@@ -1,135 +1,99 @@
+Certainly! Here is the complete README in markdown format:
+
 # Phillies Dashboard
 
-The **Phillies Dashboard** is a Python-based project designed to analyze the Philadelphia Phillies' season performance, including their win-loss record, upcoming schedule, and relevant game statistics. The project fetches data from an API and processes it to provide insights into the team's progress throughout the season. The dashboard can be integrated with a WordPress site to display the analysis in a user-friendly format.
+**Phillies Dashboard** is a Python-based application designed to analyze the Philadelphia Phillies' current record and upcoming games. It fetches data from various sources and provides insights on game schedules, team performance, and more.
 
-## Features
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [AWS Infrastructure](#aws-infrastructure)
+- [Contributing](#contributing)
+- [License](#license)
 
-- **Season Record Analysis**: Provides an overview of the Phillies' current win-loss record and other key season statistics.
-- **Upcoming Games**: Displays the schedule for the Phillies' next games, including opponents, dates, and venues.
-- **Streaks and Trends**: Analyzes recent performance, including winning and losing streaks.
+## Prerequisites
 
-## AWS Infrastructure Prerequisites
+Before you can use the Phillies Dashboard, ensure you have the following:
 
-	1.	AWS Account:
-	•	Ensure you have an active AWS account. You can sign up at AWS.
-	2.	AWS Services:
-	•	Amazon S3:
-	•	Used for storing game data or configuration files, if applicable.
-	•	Create an S3 bucket and configure appropriate read/write permissions.
-	•	Amazon RDS:
-	•	If the project uses a database for storing game records, player stats, or schedules, ensure you have an RDS instance set up (e.g., MySQL, PostgreSQL).
-	•	Configure database access by updating the connection parameters in your code.
-	•	AWS Lambda:
-	•	Used for running serverless functions to fetch and process data.
-	•	Ensure the necessary Lambda functions are deployed and configured with access to relevant AWS resources.
-	•	Amazon CloudWatch:
-	•	For logging and monitoring the functions and services used in the dashboard.
-	3.	AWS CLI:
-	•	Install and configure the AWS CLI to manage and interact with your AWS services. Follow the instructions to install from AWS CLI Installation Guide.
-	•	Use the following command to configure your AWS CLI:
+### Python and Packages
+- **Python 3.8+** installed on your machine.
+- Install the required packages using:
+  ```bash
+  pip install -r requirements.txt
+
+Database
+
+	•	A database (e.g., PostgreSQL or MySQL) set up to store game records and analysis data.
+	•	Update the database connection information in the config.py file.
+
+API Keys
+
+	•	Ensure you have API keys for any third-party services the application integrates with for fetching game data.
+
+AWS CLI
+
+	•	AWS CLI installed and configured:
+Follow the AWS CLI Installation Guide and run:
 
 aws configure
 
+Enter your AWS Access Key, Secret Key, region, and output format.
 
-	•	Enter your AWS Access Key, Secret Key, region, and output format.
+Installation
 
-	4.	IAM Roles and Permissions:
+Clone the repository and install the necessary packages:
+
+git clone https://github.com/yourusername/phillies-dashboard.git
+cd phillies-dashboard
+pip install -r requirements.txt
+
+Usage
+
+To start the application, run:
+
+python main.py
+
+The application will analyze the Phillies’ record and upcoming games, providing useful insights.
+
+AWS Infrastructure
+
+The Phillies Dashboard utilizes AWS services for data storage and processing. Below are the AWS-related prerequisites:
+
+AWS Account
+
+	•	Ensure you have an active AWS account. Sign up for AWS.
+
+AWS Services
+
+	1.	Amazon S3
+	•	Used for storing game data or configuration files.
+	•	Create an S3 bucket and configure appropriate read/write permissions.
+	2.	Amazon RDS
+	•	If the project uses a database to store records or schedules, ensure you have an RDS instance set up.
+	•	Update database connection information in config.py.
+	3.	AWS Lambda
+	•	Used for running serverless functions to fetch and process data.
+	•	Ensure the necessary Lambda functions are deployed and configured with access to relevant AWS resources.
+	4.	Amazon CloudWatch
+	•	Used for logging and monitoring the application, especially if using Lambda functions.
+
+IAM Roles and Permissions
+
 	•	Ensure your AWS account or IAM user has the necessary permissions to interact with the required AWS services.
 	•	Create and assign IAM roles to grant Lambda functions or EC2 instances the required permissions.
-	5.	Environment Variables:
-	•	Define environment variables for your AWS access keys, database connection strings, and other credentials in the appropriate .env file or in your deployment scripts.
-	•	Ensure sensitive information is managed securely and not hard-coded in the source files.
 
+Environment Variables
 
-## Installation
+	•	Define environment variables for AWS access keys, database connection strings, and other credentials.
+	•	Use .env files or AWS Secrets Manager to securely manage sensitive information.
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/mdf5033/PhilliesDashboard.git
-   ```
+Contributing
 
-2. **Install Required Dependencies**:
-   Make sure you have Python 3 installed. The script requires the following Python modules:
-   - `http.client`
-   - `json`
-   - `datetime`
+Contributions are welcome! Please fork this repository, make your changes, and submit a pull request.
 
-   Install any additional dependencies if needed.
+License
 
-3. **Set Up Your API Key**:
-   - Obtain an API key from the baseball data provider.
-   - Replace `YOUR_API_KEY` in the code with your actual API key.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Usage
-
-1. **Analyzing the Phillies' Record**:
-   The function `fetch_current_record` retrieves the team's win-loss record and other statistics. Example usage:
-
-   ```python
-   from data_fetching import fetch_current_record
-   
-   record_data = fetch_current_record()
-   print(f"The Phillies' current record is {record_data['wins']} wins and {record_data['losses']} losses.")
-   ```
-
-2. **Fetching the Upcoming Schedule**:
-   The function `fetch_upcoming_schedule` retrieves the next few games for the Phillies, showing opponents, dates, and game locations. Example usage:
-
-   ```python
-   from data_fetching import fetch_upcoming_schedule
-   
-   schedule = fetch_upcoming_schedule()
-   for game in schedule:
-       print(f"Next game: {game['opponent']} on {game['date']} at {game['venue']}")
-   ```
-
-3. **Running the Main Script**:
-   You can run the main script from the command line to analyze the team's performance and generate insights:
-   ```bash
-   python main.py
-   ```
-
-## Configuration
-
-- **API Endpoint**: Replace `"api.example.com"` in the `fetch_current_record` and `fetch_upcoming_schedule` functions with the actual API endpoint for the data provider.
-- **Game Filters**: You can configure filters to analyze specific time frames (e.g., last 10 games) by modifying the relevant function parameters.
-
-## File Structure
-
-```
-PhilliesDashboard/
-│
-├── data_fetching.py       # Contains functions for fetching team data from the API
-├── main.py                # Main script to run the program
-└── README.md              # Project documentation
-```
-
-## Error Handling
-
-If any issues arise with network requests or data fetching, the script will log appropriate error messages. Ensure your API key and endpoints are correctly configured.
-
-## Contributing
-
-1. **Fork the Repository**
-2. **Create a New Branch**
-   ```bash
-   git checkout -b feature-name
-   ```
-3. **Commit Your Changes**
-   ```bash
-   git commit -m "Add new feature"
-   ```
-4. **Push to the Branch**
-   ```bash
-   git push origin feature-name
-   ```
-5. **Open a Pull Request**
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
-## Acknowledgments
-
-- [Tank01 MLB Live In-Game]([https://api.example.com](https://rapidapi.com/tank01/api/tank01-mlb-live-in-game-real-time-statistics/playground/apiendpoint_ace7dee9-2aab-4836-be4b-95e483cdb8e5)) - For providing team data.
-- Python Community - For helpful resources and documentation.
+This markdown format is structured to be user-friendly and provides clear guidance on the project's setup, AWS requirements, and general usage.
